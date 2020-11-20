@@ -1,5 +1,6 @@
 #sintaxe: instrução ra rb imm
 #exemplo: addi R1 R0 -6
+#sem virgula e  com 'r' (ou qlqr letra) antes do num do reg
 instrucao = input().split()
 while instrucao != [0, 0]:
     instrucao[3] = int(instrucao[3])
