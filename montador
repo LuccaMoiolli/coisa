@@ -1,6 +1,7 @@
 #sintaxe: instrução ra rb imm
 #exemplo: addi R1 R0 -6 ou addi R1,R7,1 
 #com 'r' (ou qlqr letra) antes do num do reg
+#print('#A 0000h\n#B\n\n') #linha magica
 instrucao = input().split()
 while instrucao != [0, 0]:
     instrucao = instrucao[0:1] + instrucao[1].split(",")
