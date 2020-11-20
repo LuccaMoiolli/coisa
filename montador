@@ -1,0 +1,26 @@
+instrucao = input().split()
+while instrucao != [0, 0]:
+    instrucao[3] = int(instrucao[3])
+    instrucao[2] = int(instrucao[2][1])
+    instrucao[1] = int(instrucao[1][1])
+    if instrucao[0] == 'addi':
+        instrucao[0] = '00'
+    if instrucao[0] == 'subi':
+        instrucao[0] = '01'
+    if instrucao[0] == 'jleu':
+        instrucao[0] = '10'
+    if instrucao[0] == 'jles':
+        instrucao[0] = '11'
+    if instrucao[3] < 0:
+        instrucao[3] = (instrucao[3] + 255)%255 + 1
+    for i in range(3):
+        instrucao[1+i] = bin(instrucao[1+i])[2:]
+    if len(instrucao[3]) < 8:
+        instrucao[3] = '0'*(8-len(instrucao[3])) + instrucao[3]
+    if len(instrucao[1]) < 3:
+        instrucao[1] = '0'*(3-len(instrucao[1])) + instrucao[1]
+    if len(instrucao[2]) < 3:
+        instrucao[2] = '0'*(3-len(instrucao[2])) + instrucao[2]
+    #troca o print pra escrever num arquivo pro programa ficar salvo e não ficar aparecendo
+    print(''.join(list(reversed(instrucao)))) 
+    instrucao = input().split()
