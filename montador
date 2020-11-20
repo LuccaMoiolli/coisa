@@ -1,5 +1,5 @@
 #sintaxe: instrução ra rb imm
-#exemplo: addi R1 R0 -6
+#exemplo: addi R1 R0 -6 ou addi R1,R7,1 
 #com 'r' (ou qlqr letra) antes do num do reg
 instrucao = input().split()
 instrucao = instrucao[0:1] + instrucao[1].split(",")
